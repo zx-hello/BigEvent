@@ -1,0 +1,43 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  /* background-color: #5ea0f1; */
+}
+
+/* 所有图标两边加边距 */
+.layui-icon {
+  margin: 0 6px;
+  font-size: 16px;
+}
+/* 子菜单，稍微向右移动一下 */
+.layui-icon-app {
+  padding-left: 15px;
+}
+
+.userinfo {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+/* 调整字体头像 */
+.user-avatar {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #419488;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 16px;
+}
+
+.user-avatar, .layui-nav-img {
+  display: none;
+}
