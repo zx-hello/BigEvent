@@ -1,3 +1,10 @@
+<script>
+  // 判断本地存储中是否有token 有token说明登录了 没有就说明没登录
+  // 这样就不会出现看见了index页面后才返回登录页面 而是直接在登录页面判断
+  if (localStorage.getItem('token') === null) {
+    location.href = './login.html'
+  }
+</script>
 <!DOCTYPE html>
 <html lang="en">
   <head>

@@ -1,4 +1,27 @@
-// -------发送请求 获取用户信息   http://www.itcbc.com:8080/my/user/userinfo
+// 响应拦截器  当身份认证失败需要跳转到登陆页面 
+// 并且不允许直接强行登录index页面 必须通过登录才可以进入
+axios.interceptors.response.use(
+  function (response){
+    // console.log(response)
+    let {status, message} = response.data
+    if (status === 1) layer.msg(message)
+    return response
+  },
+  function (error) {
+    // 错误的时候也可以拿到结果 是error.response
+    // console.log(error.response)
+    let {status, message} = error.response.data
+    // 判断token过期或者错误
+    if (status === 1 && message === '身份认证失败！') {
+      localStorage.removeItem('token')
+      location.href = './login.html'
+    }
+    layer.msg(message)
+    return Promise.reject(error)
+  }
+)
+
+// -------发送请求 获取用户信息
 axios.get('http://www.itcbc.com:8080/my/user/userinfo', {
   headers : {
     Authorization : localStorage.getItem('token')
