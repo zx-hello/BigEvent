@@ -1,6 +1,6 @@
 // 添加响应拦截器
 // axios.interceptors.response.use(函数1, 函数2)
-// 1 处理的是成功的状态 状态码是200-299 的响应
+// 1 处理的是成功的状态 状态码是200-399 的响应
 // 2 处理的是失败的响应 状态码是400-599 的响应
 axios.interceptors.response.use(
   function (response){
