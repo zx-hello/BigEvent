@@ -9,7 +9,7 @@ function renderUser() {
     // $('input[name=username]').val(username)
     // $('input[name=nickname]').val(nickname)
     // $('input[name=email]').val(email)
-    
+
     // 优化  使用layui提供的form.val()进行数据回填
     let form = layui.form
     // form.val('表单 lay-filter 属性值', '{数据} 对象格式 键要等于表单的name属性')
@@ -34,6 +34,11 @@ $('form').on('submit', function (e) {
       // 2.必须在真是的服务器环境才可以使用 live server
       window.parent.getUserInfo()
     }
+  }).catch(error => {
+    // console.log(error.response)
+    let {message} = error.response.data
+    layer.msg(message)
+
   })
 })
 
