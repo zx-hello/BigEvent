@@ -1,22 +1,22 @@
-// 添加响应拦截器
-// axios.interceptors.response.use(函数1, 函数2)
-// 1 处理的是成功的状态 状态码是200-399 的响应
-// 2 处理的是失败的响应 状态码是400-599 的响应
-axios.interceptors.response.use(
-  function (response){
-    // console.log(response)
-    let {status, message} = response.data
-    if (status === 1) layer.msg(message)
-    return response
-  },
-  function (error) {
-    // 错误的时候也可以拿到结果 是error.response
-    // console.log(error.response)
-    let {status, message} = error.response.data
-    layer.msg(message)
-    return Promise.reject(error)
-  }
-)
+// // 添加响应拦截器
+// // axios.interceptors.response.use(函数1, 函数2)
+// // 1 处理的是成功的状态 状态码是200-399 的响应
+// // 2 处理的是失败的响应 状态码是400-599 的响应
+// axios.interceptors.response.use(
+//   function (response){
+//     // console.log(response)
+//     let {status, message} = response.data
+//     if (status === 1) layer.msg(message)
+//     return response
+//   },
+//   function (error) {
+//     // 错误的时候也可以拿到结果 是error.response
+//     // console.log(error.response)
+//     let {status, message} = error.response.data
+//     layer.msg(message)
+//     return Promise.reject(error)
+//   }
+// )
 
 // ---------切换登录和注册两个盒子
 // 点击登录里面的 a 标签 注册盒子出现
@@ -45,7 +45,7 @@ $('.login form').on('submit', function (e) {
   //   }
   // })
   // 语法 axios.post(url, 请求体).then(函数 获取返回结果).catch(函数 获取错误结果)
-  axios.post('http://www.itcbc.com:8080/api/login', data).then(res => {
+  axios.post('/api/login', data).then(res => {
     // console.log(res)
     // 解构赋值 获取响应结果中的 status/message/token
     let {status, message, token} = res.data
@@ -70,7 +70,7 @@ $('.register form').on('submit', function (e) {
   e.preventDefault()
   let data = $(this).serialize()
   // console.log(data)
-  axios.post('http://www.itcbc.com:8080/api/reguser', data).then(res => {
+  axios.post('/api/reguser', data).then(res => {
     // console.log(res)
     let {status, message} = res.data
     if (status === 0) {
