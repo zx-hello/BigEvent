@@ -43,6 +43,7 @@ body {
 }
 
 iframe {
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   width: 100%;
   height: 100%;
 }
