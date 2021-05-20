@@ -1,4 +1,4 @@
-// 发送请求 获取用户信息   http://www.itcbc.com:8080/my/user/userinfo
+// -------发送请求 获取用户信息   http://www.itcbc.com:8080/my/user/userinfo
 axios.get('http://www.itcbc.com:8080/my/user/userinfo', {
   headers : {
     Authorization : localStorage.getItem('token')
@@ -21,4 +21,17 @@ axios.get('http://www.itcbc.com:8080/my/user/userinfo', {
     // 此处使用show()方法 会显示元素本身的display状态 所以不适合使用show()
     $('.user-avatar').text(first).css('display', 'inline-block')
   }
+})
+
+// ---------退出
+$('#logout').on('click', function () {
+  layer.confirm('确定退出吗？', {icon: 3, title:'提示'}, function(index){
+    //do something
+    // 点击确定 删除token
+    localStorage.removeItem('token')
+    // 如果点击确定就会执行 跳转到登录页面
+    location.href = './login.html'
+    // 关闭弹出层
+    layer.close(index);
+  });
 })
