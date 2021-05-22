@@ -94,6 +94,7 @@ $('#search').on('submit', function (e) {
   // 获取下拉框的两个值
   let cate_id = $('#category').val()
   let state = $('#state').val()
+  // console.log(cate_id, state)
 
   // 设置请求参数
   if (cate_id) {
