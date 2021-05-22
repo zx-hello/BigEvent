@@ -73,7 +73,7 @@ function showPage(t) {
 // 获取真实 的分类
 axios.get('/my/category/list').then(res => {
   let {status, data} = res.data
-  console.log(res.data)
+  // console.log(res.data)
   if (status === 0) {
     // console.log(data)
     let str = ''
