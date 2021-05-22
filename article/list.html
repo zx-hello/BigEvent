@@ -17,20 +17,19 @@
           <div class="layui-form-item">
             <div class="layui-inline">
               <div class="layui-input-inline" style="width: 200px">
-                <select name="city" lay-verify="">
-                  <option value="">请选择一个城市</option>
-                  <option value="010">北京</option>
+                <select id="category" lay-verify="">
+                  <option value="">全部分类</option>
+                  <!-- <option value="010">北京</option>
                   <option value="021">上海</option>
-                  <option value="0571">杭州</option>
+                  <option value="0571">杭州</option> -->
                 </select>
               </div>
 
               <div class="layui-input-inline" style="width: 200px">
-                <select name="city" lay-verify="">
-                  <option value="">请选择一个城市</option>
-                  <option value="010">北京</option>
-                  <option value="021">上海</option>
-                  <option value="0571">杭州</option>
+                <select id="state" lay-verify="">
+                  <option value="">全部状态</option>
+                  <option value="已发布">已发布</option>
+                  <option value="草稿">草稿</option>
                 </select>
               </div>
             </div>
@@ -65,30 +64,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>静夜思</td>
-              <td>艺术</td>
-              <td>2021-01-13 12:39:08</td>
-              <td>已发布</td>
-              <td>
-                <button type="button" class="layui-btn layui-btn-xs">
-                  编辑
-                </button>
-                <button
-                  type="button"
-                  class="layui-btn layui-btn-xs layui-btn-danger"
-                >
-                  删除
-                </button>
-              </td>
-            </tr>
+            
           </tbody>
         </table>
-        <!-- 内容区二 表格区 end -->
 
-        <!-- 内容区三 分页区 start -->
+        <!-- 分页区 start -->
         <div id="page"></div>
-        <!-- 内容区三 分页区 end -->
       </div>
     </div>
 
