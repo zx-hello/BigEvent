@@ -70,7 +70,7 @@ $('form').on('submit', function (e) {
       let {status, message} = res.data
       if (status === 0) {
         layer.msg(message)
-        // location.href = ''
+        location.href = './list.html'
       }
     })
   })
