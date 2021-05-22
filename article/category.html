@@ -12,7 +12,10 @@
     <div class="layui-card">
       <div class="layui-card-header">
         类别管理
-        <button type="button" class="layui-btn layui-btn-normal layui-btn-sm">
+        <button
+          type="button"
+          class="layui-btn layui-btn-normal layui-btn-sm add"
+        >
           添加类别
         </button>
       </div>
@@ -30,26 +33,105 @@
               <th>操作</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>音乐</td>
-              <td>imusic</td>
-              <td>
-                <button type="button" class="layui-btn layui-btn-xs">
-                  编辑
-                </button>
-                <button
-                  type="button"
-                  class="del layui-btn layui-btn-xs layui-btn-danger"
-                >
-                  删除
-                </button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
     </div>
+
+    <!-- 添加类别按钮的弹层内容 -->
+    <script type="text/html" id="tpl-add">
+      <form class="layui-form" id="add-form" style="margin: 15px 30px 0 0">
+        <!-- 第一项：类别名称 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">类别名称</label>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="name"
+              required
+              lay-verify="required"
+              placeholder="请输入类别名称"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <!-- 第二项：类别别名 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">类别别名</label>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="alias"
+              required
+              lay-verify="required"
+              placeholder="请输入类别别名"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <!-- 第三项：按钮（这个按钮去表单那复制） -->
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">
+              确认添加
+            </button>
+            <button type="reset" class="layui-btn layui-btn-primary">
+              重置
+            </button>
+          </div>
+        </div>
+      </form>
+    </script>
+
+    <!-- 编辑按钮的弹层内容 -->
+    <script type="text/html" id="tpl-edit">
+      <form class="layui-form" id="edit-form" style="margin: 15px 30px 0 0" lay-filter="edit">
+        <!-- 第一项：类别名称 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">类别名称</label>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="name"
+              required
+              lay-verify="required"
+              placeholder="请输入类别名称"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <!-- 第二项：类别别名 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">类别别名</label>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="alias"
+              required
+              lay-verify="required"
+              placeholder="请输入类别别名"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <!-- 第三项：按钮（这个按钮去表单那复制） -->
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <input type="hidden" name="id" />
+            <button class="layui-btn" lay-submit lay-filter="formDemo">
+              确认修改
+            </button>
+            <button type="reset" class="layui-btn layui-btn-primary">
+              重置
+            </button>
+          </div>
+        </div>
+      </form>
+    </script>
 
     <script src="../assets/lib/jquery.js"></script>
     <script src="../assets/lib/layui/layui.js"></script>
