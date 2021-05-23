@@ -11,7 +11,7 @@ function renderArticle() {
   axios.get('/my/article/list', {
     params : params
   }).then(res => {
-    // console.log(res.data)
+    // console.log(res.data)  // {status: 0, message: "获取文章列表数据成功", data: Array(3), total: 18}
     let {status, data, total} = res.data
 
     if (status === 0) {

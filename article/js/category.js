@@ -41,9 +41,11 @@ $('tbody').on('click', '.layui-btn-danger', function (e) {
       let {status, message} = res.data
       if (status === 0) {
         layer.msg(message)
+        // 重新渲染页面
         renderCategory()
       }
     })
+    // 关闭弹窗
     layer.close(index);
   });
 })
@@ -61,6 +63,7 @@ $('.add').on('click', function () {
 
 $('body').on('submit', '#add-form', function (e) {
   e.preventDefault()
+  // 收集添加弹窗的表单内容
   let data = $(this).serialize()
   axios.post('/my/category/add', data).then(res => {
     // console.log(res)
@@ -87,8 +90,9 @@ $('body').on('submit', '#add-form', function (e) {
 let editIndex
 $('tbody').on('click', '.editBtn', function () {
   // 获取自定义属性值
-  // 若data()括号内不写内容 就是获取所有的自定义属性
+  // 若data()括号内不写内容 就是获取所有的【自定义属性】 获取点击编辑按钮的当前数据
   let oldData = $(this).data()
+
   // console.log(oldData)
   editIndex = layer.open({
     type : 1,

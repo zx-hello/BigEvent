@@ -1,6 +1,7 @@
 body{
     font-family:'MicroSoft YaHei';
-    background-color: #f2f3f5;
+    /* background-color: #f2f3f5; */
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 .main_wrap{
     position:fixed;
